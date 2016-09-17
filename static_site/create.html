@@ -1,1 +1,62 @@
-create.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Encrypted Message Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-md-3 left-wrapper">
+        <div class="logo">EC</div>
+        <hr>
+        <div class="nbar_wrapper">
+          <ul class="nbar_links">
+            <li><a href="index.html">Feed</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </div>
+        <hr>
+        <div class="make_post">
+          <a href="create.html"><p>Make A Post</p></a>
+        </div>
+      </div>
+      <div class="right-wrapper col-xs-12 col-md-9">
+        <form method="post">
+          <p>Enter the Header:</p>
+          <input class="create-header" type="text" name="post_header" maxlength="50"/>
+          <p>Enter the Content:</p>
+          <textarea class="create-text" name="post_text"></textarea>
+          <p>What is the Security Question?</p>
+          <input class="create-question" name="post_question" maxlength="100"/>
+          <p>What is the Answer?</p>
+          <input class="create-answer" name="post_answer" maxlength="50"/>
+          <br/>
+          <br/>
+          <input class="create-submit" type="submit" value="Create Post"/>
+        </form>
+      </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

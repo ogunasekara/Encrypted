@@ -16,6 +16,8 @@ class BlogEntry(db.Model):
   author = db.Column(db.String(30))
   text = db.Column(db.String(5000))
   date = db.Column(db.DateTime())
+  question = db.Column(db.String(100))
+  answer = db.Column(db.String(50))
 
   def __init__(self, header, author, text):
     self.header = header
