@@ -1,0 +1,115 @@
+/*
+  This is such HORRIBLE CSS
+  PLEASE DON'T LEARN FROM IT
+*/
+
+body {
+  margin: 0 25%;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+#header {
+  height: 20px;
+  background-color: #000070;
+}
+
+.header-nav {
+  float: left;
+  width: 33.33%;
+  background-color: blue;
+}
+
+.header-nav a {
+  padding: 10%;
+  text-decoration: none;
+  text-align: center;
+  color: yellow;
+}
+
+h1 {
+  margin-bottom: 0%;
+}
+
+.header-nav a:hover {
+  color: red;
+}
+
+#body {
+  margin-top: ;
+}
+
+.body-content {
+  margin-top: 5%;
+}
+
+/* Entry CSS */
+
+.blog-entry {
+  border: 1px solid blue;
+  margin: 5% 0%;
+}
+
+.blog-entry p {
+  margin: 2% 0%;
+}
+
+.entry-title {
+  text-align: left;
+  padding: 0% 5%;
+  margin: 0px;
+}
+
+.entry-title h2 {
+  margin: 0% 0%;
+}
+
+.entry-metadata {
+  font-size: 12px;
+  height: 20px;
+  margin: 0% 6%;
+}
+
+.entry-author {
+  display: inline-block;
+  float: left;
+}
+
+.entry-date {
+  display: inline-block;
+  float: right;
+}
+
+.entry-content {
+  padding-top: 3%;
+  padding: 3% 3% 0% 3%;
+  display: none;
+}
+
+.entry-toggle {
+  margin-top: 5%;
+  border-radius: 2px;
+  background-color: #D3D3D3;
+}
+
+.entry-toggle p {
+  font-size: 14px;
+  margin: 0%;
+}
+
+/* Create CSS */
+
+.create-form {
+  margin-top: 5%;
+  border: 1px solid purple;
+}
+
+.create-form input[type=text] {
+  width: 90%;
+  text-align: center;
+}
+
+.create-text {
+  width: 90%;
+  height: 10em;
+}

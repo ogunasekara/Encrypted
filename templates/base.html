@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <!-- I can see you looking at this source code.
+    While doing so is a great way to learn new web development techniques, I'm not the best person to learn front-end techniques from.
+    So examine this at your own risk. -->
+    <!-- Also, if you're here to find answers, I hope you gave it your best effort first.-->
+    <div id="header">
+      <div id="header-content">
+        <div class="header-nav">
+          <a href="/">Home</a>
+        </div>
+        <div class="header-nav">
+          <a href="/about">About</a>
+        </div>
+        <div class="header-nav">
+          <a href="/create">New Post</a>
+        </div>
+      </div>
+    </div>
+    <div id="body">
+      <div id="body-content">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
