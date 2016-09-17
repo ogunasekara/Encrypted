@@ -26,6 +26,18 @@ class BlogEntry(db.Model):
   def __repr__(self):
     return "POST %s by %s on %s" %(self.header, self.author, self.date)
 
+class users(db.Model):
+    ID = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30))
+    password = db.Column(db.String(30))
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return "POST %s with pass %s" %(self.username, self.password)
+
 db.create_all()
 
 # helper functions
