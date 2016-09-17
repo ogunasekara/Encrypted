@@ -6,32 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css') }}">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Mate" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Libre+Franklin" rel="stylesheet">  
+    <!-- font-family: 'Libre Franklin', sans-serif; -->
+    <!-- font-family: 'Josefin Sans', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700" rel="stylesheet"> 
+    <!-- font-family: 'Orbitron', sans-serif; -->
 
     {% block head %}{% endblock %}
   </head>
   <body>
-    <div class="navigation">
-      <div class="logo">
-        <a href="/">OG</a>
+    <div class="container-fluid">
+      <div class="col-md-3 left-wrapper">
+        <div class="logo"><a href="/"><img src="{{ url_for('static', filename='logo_new.png') }}" style="width:80%;"></a></div>
+        <hr>
+        <div class="nbar_wrapper">
+          <ul class="nbar_links">
+            <li><a href="/">Feed</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+        <hr>
+        <div class="make_post">
+          <a href="/create"><p>Make A Post</p></a>
+        </div>
       </div>
-      <div class="nbarlinks_wrapper"></div>
-    </div>
-    <div id="body">
-      <div id="body-content">
         {% block body %}{% endblock %}
-      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}js/bootstrap.min.js"></script>
   </body>
 </html>

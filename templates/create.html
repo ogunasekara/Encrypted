@@ -1,27 +1,26 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>Create a Post</title>
+    <title>Make a Post</title>
 {% endblock %}
 
 {% block body %}
-        <div class="body-header">
-          <h1>New Blog Entry</h1>
-          <em>
-            Share your thoughts with the world.
-          </em>
-        </div>
-        <div class="create-form">
+        <div class="right-wrapper col-xs-12 col-md-9">
           <form method="post" action="/newpost">
-            <p>What's your name?</p>
-            <input class="create-name" type="text" name="post-name" placeholder="Json Ajax" maxlength="50" />
-            <p>Enter a title for your post:</p>
-            <input class="create-title" type="text" name="post-header" placeholder="Flask: better than Django?" maxlength="100" />
-            <p>Write your thoughts below:</p>
-            <textarea class="create-text" name="post-text" placeholder="imma a webdev hax0r"></textarea>
-            <br />
-            <br />
-            <input class="create-submit" type="submit" value="Create Post" />
+            <p>Enter the Header:</p>
+            <input class="create-header" type="text" name="post-header" maxlength="50"/>
+            <br/><br/>
+            <p>Enter the Content:</p>
+            <textarea class="create-text" name="post-text"></textarea>
+            <br/><br/>
+            <p>What is the Security Question?</p>
+            <input class="create-question" name="post-question" maxlength="100"/>
+            <br/><br/>
+            <p>What is the Answer?</p>
+            <input class="create-answer" name="post-answer" maxlength="50"/>
+            <br/>
+            <br/>
+            <input class="create-submit" type="submit" value="Create Post"/>
           </form>
         </div>
 {% endblock %}

@@ -1,41 +1,31 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>Encrypted Chat</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <title>Encrypted</title>
     <script type="text/javascript" src="{{ url_for('static', filename='toggling.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-        <div class="body-header">
-          <h1>The Everyman Blog</h1>
-          <em>
-            the WebDevWeeks sample blog
-          </em>
-        </div>
+      <div class="right-wrapper col-xs-12 col-md-9">
         {% for entry in blogEntries %}
-        <div class="blog-entry">
-          <div class="entry-header">
-            <div class="entry-title">
-              <h2>{{ entry.title }}</h2>
-            </div>
-            <div class="entry-metadata">
-              <div class="entry-author">
-                <p class="entry-author">{{ entry.author }}</p>
-              </div>
-              <div class="entry-date">
-                <p class="entry-date">{{ entry.date.strftime("%I:%M %p (UTC) %b %d, %Y") }}</p>
-              </div>
+        <div class="post">
+          <div class="post_header ">
+            <div class="title">{{ entry.header }}</div>
+            <div class="sub">
+              <em>Amanda O’Donoughue</em> | {{ entry.date.strftime("%b %d, %Y") }}
             </div>
           </div>
-          <div class="entry-content">
-            <p class="entry-description">{{ entry.text }}</p>
+          <div class="post_content">
+            <p style="width:100%">EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJYQTQUXQBQVYUVLLTREVJYQTMKYRDMFDVFPJUDEEHZWETZYVGWHKKQETGFQJNCE</p>
           </div>
-          <div class="entry-toggle">
-            <p>
-              click here to show/hide
-            </p>
+          <div class="button_wrapper">
+              <button href="#" type="button" class="btn btn-default answer_btn" onclick="toggle_visibility('question_area');">Answer</button>
+          </div>
+          <div id="question_area" style="display:none;">
+            <hr/>
+            TEST
           </div>
         </div>
         {% endfor %}
+      </div>
 {% endblock %}

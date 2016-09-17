@@ -1,22 +1,18 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <title>About This Blog</title>
+	<title>About Us</title>
 {% endblock %}
 
 {% block body %}
-        <div class="body-header">
-          <h1>What is this, anyway?</h1>
-          <em>
-            the who what where when why
-          </em>
-        </div>
-        <div class="body-content">
-          <p>
-            This is a blog built on Flask made by a WebDevWeeks student in the Server-Side Development session.
-          </p>
-          <p>
-            WebDevWeeks is an initiative by ScottyLabs to help more people learn about web development.
-          </p>
-        </div>
+	<div class="right-wrapper col-xs-12 col-md-9">
+		<div class="post">
+			<div class="post_header" style="text-align:center;">
+				<h1>About Us</h1>
+			</div>
+			<div class="post_content">
+				<img src="{{ url_for('static', filename='the_c.png')}}" style="float:left; height:100px;"/> goal of Encrypted is to make it easier to get in touch with large groups of people and eliminate the need to message each member of the group individually. Although it’s a public message board, each message is password-protected and lets only the intended recipients read the message. Using Encrypted to coordinate huge gatherings is way more convenient than contacting every person individually, or even creating a big Facebook group. Give it a shot!
+			</div>
+		</div>
+	</div>
 {% endblock %}

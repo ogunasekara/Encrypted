@@ -5,7 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 # app configuration
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///encrmsg.db"
-app.debug = False
+app.debug = True
 
 # db configuration
 db = SQLAlchemy(app)
@@ -13,16 +13,17 @@ db = SQLAlchemy(app)
 class BlogEntry(db.Model):
   ID = db.Column(db.Integer, primary_key=True)
   header = db.Column(db.String(50))
-  author = db.Column(db.String(30))
+  # author = db.Column(db.String(30))
   text = db.Column(db.String(5000))
   date = db.Column(db.DateTime())
   question = db.Column(db.String(100))
   answer = db.Column(db.String(50))
 
-  def __init__(self, header, author, text):
+  def __init__(self, header, text, question, answer):
     self.header = header
-    self.author = author
     self.text = text
+    self.question = question
+    self.answer = answer
     self.date = datetime.utcnow()
 
   def __repr__(self):
@@ -43,15 +44,18 @@ class users(db.Model):
 db.create_all()
 
 # helper functions
-def createPost(author, header, text):
+def createPost(header, text, question, answer):
   '''
   Creates a BlogEntry if given valid parameters, else return None.
   '''
   # first verify components
-  if author and header and text and \
-      len(author) <= 30 and len(header) <= 50 and len(text) <= 5000:
-    return BlogEntry(author, header, text)
+  if header and text and question and answer and \
+      len(header) <= 50 and len(text) <= 5000 and len(question) <= 100 and \
+      len(answer) <= 50:
+    return BlogEntry(header, text, question, answer)
   return None
+
+#def checkAnswer(question):
 
 # routing
 @app.route("/")
@@ -68,12 +72,17 @@ def about():
 def create():
   return render_template("create.html")
 
+@app.route("/profile")
+def profile():
+  return render_template("profile.html")
+
 @app.route("/newpost", methods=["POST"])
 def newpost():
-  author = request.form["post-name"]
-  title = request.form["post-header"]
+  header = request.form["post-header"]
   text = request.form["post-text"]
-  post = createPost(author, title, text)
+  question = request.form["post-question"]
+  answer = request.form["post-answer"]
+  post = createPost(header, text, question, answer)
   # case invalid
   if post == None:
     return render_template("create.html")
@@ -82,6 +91,10 @@ def newpost():
     db.session.add(post)
     db.session.commit()
     return redirect(url_for("home"))
+
+#@app.route("/questionform", methods=["POST"])
+#def questionform():
+
 
 # actual calls
 if __name__ == "__main__":
